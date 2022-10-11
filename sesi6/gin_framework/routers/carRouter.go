@@ -14,6 +14,7 @@ func StartServer() *gin.Engine {
 	//meregistrasikan endpoint UpdateCar pada function StartServer yang terletak pada file carRouter.go di dalam folder routers.
 	router.GET("/cars/:carID", controllers.GetCar)
 	router.DELETE("/cars/:carID", controllers.DeleteCar)
+	router.GET("/cars", controllers.GetAll)
 	return router
 }
 
