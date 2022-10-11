@@ -165,3 +165,14 @@ func DeleteCar(ctx *gin.Context) {
 		"message": fmt.Sprintf("car with id %v has been succesfully deleted", carID),
 	})
 }
+
+//tugas
+/*tugas buat endpoint yang menampilkan semua data tanpa id*/
+func GetAll(ctx *gin.Context) {
+	var carData []Car
+	carData = CarDatas
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"cars": carData,
+	})
+}
