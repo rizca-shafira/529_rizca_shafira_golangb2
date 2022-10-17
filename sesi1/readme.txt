@@ -30,3 +30,25 @@ output : xy
 /*
 komentar juga
 */
+
+var
+int
+float32
+string
+boolean
+
+kalo var dideklarasikan tanpa tipe data, golang akan menentukan. disebut type interference
+
+fmt.Printf() untuk melakukan print dgn flag2 %d, %s, %f, %T, dll
+
+tanpa tipe data
+var age = 23
+
+short declaration
+age := 23
+
+supaya ga ada error klo var ga digunakan
+_ = age
+disebut underscore variable
+
+
