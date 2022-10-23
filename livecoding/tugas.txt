@@ -1,0 +1,20 @@
+buat rest api 
+1
+endpoint /rizca
+output struct : nama lengkap (str), kode peserta (str), hobi (arr)
+ref sesi 6
+
+2
+middleware 
+endpoint /data/{param}
+output mid 1 hello middleware {output param}
+output mid 2 struct : nama lengkap (str), kode peserta (str), hobi (arr)
+endpoint datanya helo middleware sama struct
+ref sesi 10
+
+3
+testify 
+palindrom 
+input : katak 
+output : katak 
+sesi 11
