@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water & Wind</title>
+
+</head>
+
+<body>
+    <div style="padding:0 10%">
+        <div>
+            <h1>Water & Wind</h1>
+            <a id="about" href="about.html">About Me </a>
+        </div>
+        <div style="text-align: center; margin-top: 5%;">
+            <div style="width: 50%;float: left;">
+                <h3>Water</h3>
+                <h2 id="water">??</h2>
+                <h3>meter</h3>
+                <h2 id="msgWater"></h2>
+            </div>
+            <div style="width: 50%;float: right;">
+                <h3>Wind</h3>
+                <h2 id="wind">??</h2>
+                <h3>m/s</h3>
+                <h2 id="msgWind"></h2>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    const api_url = "http://localhost:8081/reload/latest"
+
+    async function get_data(a) {
+        const response = await fetch(a)
+        var data = await response.json()
+        var water = data["status"]["water"]
+        var wind = data["status"]["Wind"]
+        var msgWater = data["waterMessage"]
+        var msgWind = data["windMessage"]
+
+        document.getElementById("water").innerHTML = water;
+        document.getElementById("wind").innerHTML = wind;
+        document.getElementById("msgWater").innerHTML = msgWater;
+        document.getElementById("msgWind").innerHTML = msgWind;
+        setTimeout(() => get_data(a), 1000 * 5)
+
+    }
+
+    get_data(api_url);
+</script>
